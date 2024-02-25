@@ -33,11 +33,6 @@ public class Neuron implements INeuron {
     }
 
     @Override
-    public List<INeuron> get_Connections() {
-        return null;
-    }
-
-    @Override
     public double sum_Connections(List<Double> input_values) {
         return input_values.stream()
                            .reduce(0d, Double::sum);
