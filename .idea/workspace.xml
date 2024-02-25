@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564720a8-3e5c-431a-b4f0-c8e3af6302fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ANN.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ConnectionBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Neuron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/Connections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/INeuron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/ProtoNeuron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/operations/NN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neuron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/ProtoNeuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/ProtoNeuron.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +91,7 @@
       <workItem from="1708727462292" duration="888000" />
       <workItem from="1708728374044" duration="11865000" />
       <workItem from="1708758614352" duration="1279000" />
-      <workItem from="1708814105876" duration="13730000" />
+      <workItem from="1708814105876" duration="14443000" />
     </task>
     <servers />
   </component>

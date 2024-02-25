@@ -1,40 +1,39 @@
 package components;
 
 import java.util.List;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Random;
 import interfaces.INeuron;
+import operations.NN;
 
 public class Neuron implements INeuron {
-    private List<Double> input_values;
     private double bias;
-    private List<INeuron> connections = new ArrayList<>();
 
     public Neuron() {
         this.bias = new Random().nextDouble();
+
         ConnectionBlock.neurons.add(this);
     }
     public Neuron(double bias) {
         this.bias = bias;
+
         ConnectionBlock.neurons.add(this);
     }
-
-    //
 
     //region Super
     @Override
     public double get_Bias() {
-        return 0;
+        return bias;
     }
 
     @Override
     public void setBias(double value) {
-
+        this.bias = value;
     }
 
     @Override
     public void adjustBias(double value) {
-
+        bias+=value;
     }
 
     @Override
@@ -49,9 +48,9 @@ public class Neuron implements INeuron {
     }
 
     @Override
-    public double process_Output() {
-        return sum_Connections(input_values);
+    public double process_Output(List<Double> input_values) {
+        return operations.NN.sigmoid(sum_Connections(input_values))+bias;
     }
-//endregion
+    //endregion
 
 }

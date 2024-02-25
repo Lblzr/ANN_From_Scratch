@@ -20,5 +20,5 @@ public interface ProtoNeuron {
      * Method to process and return components.Neuron output
      * @return double
      */
-    double process_Output();
+    double process_Output(List<Double> input_values);
 }
