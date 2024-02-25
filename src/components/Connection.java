@@ -3,23 +3,23 @@ package components;
 public class Connection {
     double value;
     double weight;
-    Neuron neuron_output;
-    Neuron neuron_input;
+    Neuron input_neuron;
+    Neuron output_neuron;
 
-    public Connection(Neuron neuron_output, Neuron neuron_input) {
-        this.neuron_output = neuron_output;
-        this.neuron_input = neuron_input;
+    public Connection(Neuron output_neuron, Neuron input_neuron) {
+        this.input_neuron = input_neuron;
+        this.output_neuron = output_neuron;
 
         this.value = 0;
         this.weight = 0;
-    } // end of Constructor
-    public Connection(Neuron neuron_output, Neuron neuron_input, double value, double weight) {
-        this.neuron_output = neuron_output;
-        this.neuron_input = neuron_input;
+    }
+    public Connection(Neuron output_neuron, Neuron input_neuron, double value, double weight) {
+        this.input_neuron = input_neuron;
+        this.output_neuron = output_neuron;
 
         this.value = value;
         this.weight = weight;
-    } // end of Constructor
+    }
 
 
     // Getters
@@ -31,4 +31,4 @@ public class Connection {
         return weight;
     }
 
-} // end of components.Connection
+}

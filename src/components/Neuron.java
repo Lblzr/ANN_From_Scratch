@@ -11,13 +11,9 @@ public class Neuron implements INeuron {
 
     public Neuron() {
         this.bias = new Random().nextDouble();
-
-        ConnectionBlock.neurons.add(this);
     }
     public Neuron(double bias) {
         this.bias = bias;
-
-        ConnectionBlock.neurons.add(this);
     }
 
     //region Super
