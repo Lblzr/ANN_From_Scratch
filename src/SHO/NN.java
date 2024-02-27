@@ -1,4 +1,4 @@
-package operations;
+package SHO;
 
 public class NN {
     public static double sigmoid(double input) {

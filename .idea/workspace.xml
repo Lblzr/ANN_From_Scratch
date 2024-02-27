@@ -9,7 +9,9 @@
       <change beforePath="$PROJECT_DIR$/src/components/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ConnectionBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConnectionBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neuron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/operations/NN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/NN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/ProtoNeuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/ProtoNeuron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/NN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SHO/NN.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +29,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Lblzr"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lblzr&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -63,10 +65,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Debug",
     "Application.TEST.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "didalgo.chatgpt.ToolWindow.ACTIVE": "GPT_3_5",
     "git-widget-placeholder": "main",
     "ignore.preview.features.used": "true",
     "ignore.virus.scanning.warn.message": "true",
@@ -78,10 +82,35 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "settings.editor.selected.configurable": "com.didalgo.chatgpt.settings.OpenAISettings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="echo Hello World" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="ANN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -107,7 +136,10 @@
       <workItem from="1708728374044" duration="11865000" />
       <workItem from="1708758614352" duration="1279000" />
       <workItem from="1708814105876" duration="24594000" />
-      <workItem from="1708848094116" duration="7982000" />
+      <workItem from="1708848094116" duration="8392000" />
+      <workItem from="1708888483100" duration="19542000" />
+      <workItem from="1709012679581" duration="18339000" />
+      <workItem from="1709063639922" duration="10970000" />
     </task>
     <task id="LOCAL-00001" summary="Another big update. Re-organize, re-formatted, re-design.">
       <option name="closed" value="true" />
@@ -126,6 +158,88 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Another big update. Re-organize, re-formatted, re-design." />
     <option name="LAST_COMMIT_MESSAGE" value="Another big update. Re-organize, re-formatted, re-design." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>38</line>
+          <properties class="components.ConnectionBlock" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>136</line>
+          <properties class="components.ConnectionBlock" method="processNeurons">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>181</line>
+          <properties class="components.ConnectionBlock" method="propagate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>200</line>
+          <properties class="components.ConnectionBlock" method="propagate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint type="java-field">
+          <url>file://$PROJECT_DIR$/src/components/Neuron.java</url>
+          <line>11</line>
+          <properties field="value" class="components.Neuron" />
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="114" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="components.Connection" memberName="OUTPUT_NEURON" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="connections.get(1024)" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
