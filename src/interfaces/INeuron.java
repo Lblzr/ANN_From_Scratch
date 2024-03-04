@@ -7,7 +7,7 @@ public interface INeuron extends ProtoNeuron {
      * Getter to return bias value
      * @return double
      */
-    double get_Bias();
+    double getBias();
 
     /**
      * Setter to set bias value

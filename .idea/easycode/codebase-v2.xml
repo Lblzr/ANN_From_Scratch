@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/src/components/Connection.java;D:/JetBrains/IdeaProjects/ANN_From_Scratch/src/components/ConnectionBlock.java;D:/JetBrains/IdeaProjects/ANN_From_Scratch/src/components/Neuron.java;D:/JetBrains/IdeaProjects/ANN_From_Scratch/src/interfaces/INeuron.java;D:/JetBrains/IdeaProjects/ANN_From_Scratch/src/interfaces/ProtoNeuron.java;D:/JetBrains/IdeaProjects/ANN_From_Scratch/src/main/Main.java;D:/JetBrains/IdeaProjects/ANN_From_Scratch/src/SHO/NN.java;D:/JetBrains/IdeaProjects/ANN_From_Scratch/README.md" />
+    <option name="forceFullIndex" value="false" />
+    <option name="fileSummaryMaps" value="{&quot;D:/JetBrains/IdeaProjects/ANN_From_Scratch&quot;:&quot;{\&quot;/src/components/Connection.java\&quot;:\&quot;\\npublic class Connection {\\r\&quot;,\&quot;/src/SHO/NN.java\&quot;:\&quot;\&quot;,\&quot;/src/interfaces/ProtoNeuron.java\&quot;:\&quot;\\npublic interface ProtoNeuron {\\r\&quot;,\&quot;/src/main/Main.java\&quot;:\&quot;\\npublic class Main {\\r\&quot;,\&quot;/src/components/ConnectionBlock.java\&quot;:\&quot;\\npublic class ConnectionBlock {\\r\&quot;,\&quot;/src/components/Neuron.java\&quot;:\&quot;\\npublic class Neuron implements INeuron {\\r\&quot;,\&quot;/src/interfaces/INeuron.java\&quot;:\&quot;\\npublic interface INeuron extends ProtoNeuron {\\r\&quot;,\&quot;/README.md\&quot;:\&quot;\&quot;}&quot;}" />
+  </component>
+</project>

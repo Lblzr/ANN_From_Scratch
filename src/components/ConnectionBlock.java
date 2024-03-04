@@ -1,5 +1,7 @@
 package components;
 
+import processes.ForwardPropagate;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -17,14 +19,13 @@ public class ConnectionBlock {
      * Constructor for ConnectionBlock.
      * Accepts an input layer and creates a specified number of neurons for the output layer.
      *
-     * @param inputs List of input Neurons for this block
-     * @param neuron_count number of Neurons to be created for the output layer
+     * @param predefined_neurons List of input Neurons for this block
+     * @param right_neuron_count number of Neurons to be created for the output layer
      */
-    public ConnectionBlock(List<Neuron> inputs, int neuron_count) {
-//        this.neuron_count = neuron_count;
-
-        this.leftLayer = new ArrayList<>(inputs);
-        this.rightLayer = create_Neurons(neuron_count);
+    public ConnectionBlock(List<Neuron> predefined_neurons, int right_neuron_count) {
+        this.leftLayer = new ArrayList<>(predefined_neurons);
+        System.out.println("creating neurons");
+        this.rightLayer = createNeurons(right_neuron_count);
 
         connections = createConnections(this.leftLayer, this.rightLayer);
     }
@@ -47,11 +48,21 @@ public class ConnectionBlock {
 
     // Getters
 
-    public List<Neuron> get_Input_Layer() {
+    /**
+     * Returns the input layer of this block
+     *
+     * @return List of Neurons present in the input layer
+     */
+    public List<Neuron> getInputLayer() {
         return leftLayer;
     }
 
-    public List<Neuron> get_Output_Layer() {
+    /**
+     * Returns the output layer of this block
+     *
+     * @return List of Neurons present in the output layer
+     */
+    public List<Neuron> getOutputLayer() {
         return rightLayer;
     }
 
@@ -60,7 +71,7 @@ public class ConnectionBlock {
      *
      * @return List of all Neurons in this block
      */
-    public List<Neuron> return_Neurons() {
+    public List<Neuron> getAllNeurons() {
         List<Neuron> neurons = new ArrayList<>();
         neurons.addAll(leftLayer);
         neurons.addAll(rightLayer);
@@ -68,15 +79,6 @@ public class ConnectionBlock {
         return neurons;
     }
 
-    /**
-     * Returns the output layer of this block
-     *
-     * @return List of Neurons present in the output layer
-     */
-    public List<Neuron> return_Output() {
-        System.out.print("return_Output method is called. Returning output layer neurons\n"); // TODO: remove
-        return rightLayer;
-    }
 
     /**
      * Gets the connections
@@ -84,7 +86,6 @@ public class ConnectionBlock {
      * @return List of Lists representing the connections betweeen neurons
      */
     public List<List<Connection>> getConnections() {
-        System.out.print("getConnections method is called. Returning all connections\n"); // TODO: remove
         return connections;
     }
 
@@ -100,15 +101,14 @@ public class ConnectionBlock {
      * @param neuronCount number of Neurons to create
      * @return List of created Neurons
      */
-    public static List<Neuron> create_Neurons(int neuronCount) {
-        System.out.printf("createNeurons method is called. Creating %d neurons\n", neuronCount); // TODO: remove
+    public static List<Neuron> createNeurons(int neuronCount) {
         List<Neuron> layer = new ArrayList<>();
 
         for (; neuronCount>0; neuronCount--) {
             layer.add(new Neuron());
-            System.out.printf("Neuron: %s Added\n", layer.getLast()); // TODO: remove
         }
 
+        System.out.println("neuron: ok");
         return layer;
     }
 
@@ -118,14 +118,12 @@ public class ConnectionBlock {
      * @param values List of values to be assigned to created Neurons
      * @return List of created Neurons
      */
-    public static List<Neuron> create_Neurons(List<Double> values) {
-        System.out.print("createNeurons method is called with list of values parameter.\n"); // TODO: remove
+    public static List<Neuron> createNeurons(List<Double> values) {
         int neuronCount = values.size();
         List<Neuron> layer = new ArrayList<>();
 
         for (Double value : values) {
             layer.add(new Neuron(value));
-            System.out.printf("Neuron: %s Added\n", layer.getLast()); // TODO: remove
         }
 
         return layer;
@@ -134,18 +132,38 @@ public class ConnectionBlock {
     /**
      * Process values through all neurons
      */
-    public void processNeurons() {
-        this.connections = propagate();
+    public List<Double> processActivations() {
+        this.connections = f_propagate();
 
-        for (Neuron neuron : return_Output()) {
+        List<Double> final_values = new ArrayList<>();
 
+        for (Neuron neuron : getOutputLayer()) {
             List<Double> values = connections.stream()
                     .filter(list -> !list.isEmpty())
                     .map(List::getFirst) // flatten the list of lists into a single stream
-                    .map(connection -> connection.get_Input_Neuron().get_Value())
+                    .map(connection -> connection.getInputNeuron().getValue())
                     .collect(Collectors.toList());
 
-            neuron.process_Activation(values);
+            final_values.add(neuron.activation(values));
+        }
+
+        return final_values;
+    }
+    public void processActivationsVoid(ConnectionBlock... extra) {
+        this.connections = f_propagate();
+
+        for (Neuron neuron : getOutputLayer()) {
+            List<Double> values = connections.stream()
+                    .filter(list -> !list.isEmpty())
+                    .map(List::getFirst) // flatten the list of lists into a single stream
+                    .map(connection -> connection.getInputNeuron().getValue())
+                    .collect(Collectors.toList());
+
+            neuron.activation(values);
+        }
+
+        for (ConnectionBlock block : extra) {
+            block.processActivationsVoid();
         }
     }
 
@@ -157,37 +175,17 @@ public class ConnectionBlock {
      * @return List of Lists representing the connections
      */
     public static List<List<Connection>> createConnections(List<Neuron> leftLayer, List<Neuron> rightLayer) {
-        System.out.print("createConnections method is called\n"); // TODO: remove
         List<List<Connection>> connections = new ArrayList<>();
 
         for (int j = 0; j < leftLayer.size(); j++) {
             connections.add(new ArrayList<>());
-            for (int i = 0; i < rightLayer.size(); i++) {
-                connections.get(j).add(new Connection(leftLayer.get(j), rightLayer.get(i)));
-                System.out.printf("j; %d i; %d Connection: %s Added\n", j, i, connections.get(j).get(connections.get(j).size() - 1)); // TODO: remove
 
+            for (Neuron r_neuron : rightLayer) {
+                connections.get(j).add(new Connection(leftLayer.get(j), r_neuron));
+
+                System.out.printf("new %4.4s %4.4s connection: done\n", leftLayer.get(j), r_neuron);
             }
 
-        }
-
-        return connections;
-    }
-
-    /**
-     * Method to propagate values through all connections
-     *
-     * @param connections List of lists representing the connections
-     * @return Updated List of Lists representing the connections
-     */
-    public List<List<Connection>> propagate(List<List<Connection>> connections) {
-        System.out.println("propagate method is called"); // TODO: remove
-        for (int i = 0; i < connections.size(); i++) {
-            List<Connection> list = connections.get(i);
-            list.forEach(connection -> {
-                double tempCon = connection.weight();
-                connection.setValue(tempCon);
-                System.out.printf("Connection weight applied: %s, %s\n", connection.getValue(), tempCon); // TODO: remove
-            });
         }
 
         return connections;
@@ -198,7 +196,7 @@ public class ConnectionBlock {
      *
      * @return Updated List of Lists representing the connections of the current ConnectionBlock
      */
-    private List<List<Connection>> propagate() {
-        return propagate(this.connections);
+    private List<List<Connection>> f_propagate() {
+        return ForwardPropagate.propagate(this.connections);
     }
 }

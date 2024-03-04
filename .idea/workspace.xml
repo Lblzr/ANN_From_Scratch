@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="564720a8-3e5c-431a-b4f0-c8e3af6302fe" name="Changes" comment="Another big update. Re-organize, re-formatted, re-design.">
+      <change afterPath="$PROJECT_DIR$/.idea/easycode/codebase-v2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SHO/LO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TODO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/processes/BackPropagate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/processes/ForwardPropagate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/processes/TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ANN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ANN.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SHO/NN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SHO/NN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ConnectionBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConnectionBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neuron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/INeuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/INeuron.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/ProtoNeuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/ProtoNeuron.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/operations/NN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SHO/NN.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -65,11 +75,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Application.TEST.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "didalgo.chatgpt.ToolWindow.ACTIVE": "GPT_3_5",
     "git-widget-placeholder": "main",
     "ignore.preview.features.used": "true",
@@ -82,10 +99,25 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "com.didalgo.chatgpt.settings.OpenAISettings",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="SHO.LO" />
+      <recent name="main.ForwardPropagate" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="processes" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="main" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="echo Hello World" />
@@ -97,7 +129,7 @@
       <module name="ANN" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="processes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,7 +171,12 @@
       <workItem from="1708848094116" duration="8392000" />
       <workItem from="1708888483100" duration="19542000" />
       <workItem from="1709012679581" duration="18339000" />
-      <workItem from="1709063639922" duration="10970000" />
+      <workItem from="1709063639922" duration="16394000" />
+      <workItem from="1709150825889" duration="5175000" />
+      <workItem from="1709174474450" duration="11844000" />
+      <workItem from="1709314141229" duration="12587000" />
+      <workItem from="1709496673518" duration="1482000" />
+      <workItem from="1709514463726" duration="10948000" />
     </task>
     <task id="LOCAL-00001" summary="Another big update. Re-organize, re-formatted, re-design.">
       <option name="closed" value="true" />
@@ -155,81 +192,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Another big update. Re-organize, re-formatted, re-design." />
     <option name="LAST_COMMIT_MESSAGE" value="Another big update. Re-organize, re-formatted, re-design." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>38</line>
-          <properties class="components.ConnectionBlock" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>136</line>
-          <properties class="components.ConnectionBlock" method="processNeurons">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>181</line>
-          <properties class="components.ConnectionBlock" method="propagate">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>200</line>
-          <properties class="components.ConnectionBlock" method="propagate">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint type="java-field">
-          <url>file://$PROJECT_DIR$/src/components/Neuron.java</url>
-          <line>11</line>
-          <properties field="value" class="components.Neuron" />
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/components/ConnectionBlock.java</url>
-          <line>147</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.util.NoSuchElementException" package="java.util" />
-          <option name="timeStamp" value="114" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="components.Connection" memberName="OUTPUT_NEURON" />

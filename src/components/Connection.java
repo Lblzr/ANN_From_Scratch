@@ -24,6 +24,7 @@ public class Connection {
         this.OUTPUT_NEURON = output_neuron;
 
         this.weight = new Random().nextDouble();
+        System.out.println("connection ok");
     }
 
     /**
@@ -38,6 +39,7 @@ public class Connection {
         this.OUTPUT_NEURON = output_neuron;
 
         this.weight = weight;
+        System.out.println("connection ok");
     }
 
 
@@ -60,7 +62,7 @@ public class Connection {
      *
      * @return The input neuron of this Connection
      */
-    public Neuron get_Input_Neuron() {
+    public Neuron getInputNeuron() {
         return INPUT_NEURON;
     }
 
@@ -69,7 +71,7 @@ public class Connection {
      *
      * @return The output neuron of this Connection
      */
-    public Neuron get_Output_Neuron() {
+    public Neuron getOutputNeuron() {
         return OUTPUT_NEURON;
     }
 
@@ -101,9 +103,14 @@ public class Connection {
      * @return The product of the value and the weight of this Connection
      */
     public double weight() {
-        this.value = INPUT_NEURON.get_Value() * weight;
-        System.out.printf("\n\nIMPORTANT: %f\n\n", this.value);
+        this.value = INPUT_NEURON.getValue() * weight;
+
         return this.value;
+    }
+    public double weight(boolean noSet) {
+        if (noSet) return INPUT_NEURON.getValue() * weight;
+
+        else return weight();
     }
 
 }
