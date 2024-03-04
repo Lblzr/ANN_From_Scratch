@@ -54,7 +54,7 @@ public class Main {
     }
 
 
-    public static List<ConnectionBlock> createBlocks(boolean inclusive, int input_neurons, int layerCount) {
+    public static List<ConnectionBlock> createBlocks(boolean inclusive, List<Double> input_values, int... m_layers) { // minimum 3 layers, so m_layers specifies the middle layer count, not counting inp/out
         throw new UnsupportedOperationException("createBlocks is not yet implemented!");
     }
 
